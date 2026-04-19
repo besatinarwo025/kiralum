@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIRALUM | Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Age Verification Modal -->
+  <div class="age-modal" id="ageModal" aria-hidden="false">
+    <div class="age-modal-content">
+      <div class="age-modal-body">
+        <h2>Age Verification</h2>
+        <p>You must be 18 or older to access this website.</p>
+        <div class="age-buttons">
+          <button class="btn btn-primary" id="ageConfirm">I am 18 or older</button>
+          <button class="btn btn-ghost" id="ageDecline">I am under 18</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header is-transparent">
+    <div class="nav-bar">
+      <a class="brand" href="index.html">KIRALUM</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-toggle" aria-label="Open cart">
+          <span class="cart-count" id="cartCount">0</span>
+          <span class="cart-label">Cart</span>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+      <nav class="drawer-links" aria-label="Mobile Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Shop</p>
+      <h1 class="h1">Calm, expressive pieces</h1>
+      <p class="tagline">Editorial silhouettes inspired by movement and everyday rhythm.</p>
+      <div class="store-grid">
+        <div class="store-card">
+          <p class="eyebrow">New Arrivals</p>
+          <h3>Fresh drop</h3>
+          <p>Soft forms, grounded palettes.</p>
+        </div>
+        <div class="store-card">
+          <p class="eyebrow">Categories</p>
+          <div class="pill-row">
+            <span class="pill">Shirts</span>
+            <span class="pill">Trousers</span>
+            <span class="pill">Dresses</span>
+          </div>
+        </div>
+        <div class="store-card">
+          <p class="eyebrow">Story</p>
+          <p>A quiet statement of identity and culture.</p>
+        </div>
+        <div class="store-card">
+          <p class="eyebrow">Connect</p>
+          <div class="pill-row">
+            <a class="pill" href="#">Instagram</a>
+            <a class="pill" href="#">Facebook</a>
+            <a class="pill" href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shopSection">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Shirts">Shirts</button>
+        <button class="filter-btn" data-filter="Trousers">Trousers</button>
+        <button class="filter-btn" data-filter="Dresses">Dresses</button>
+        <span class="hover-note">✦ Hover to view multiple angles</span>
+      </div>
+      <div class="advanced-filters">
+        <select id="sizeFilter">
+          <option value="">Size</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <select id="colorFilter">
+          <option value="">Color</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+          <option value="Blue">Blue</option>
+          <option value="Red">Red</option>
+        </select>
+        <select id="sortFilter">
+          <option value="newest">Newest</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      
+      <!-- Recently Viewed Products -->
+      <div class="recently-viewed" id="recentlyViewed" style="display: none;">
+        <h3>Recently Viewed</h3>
+        <div class="recently-grid" id="recentlyGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer logo-footer">
+    <div class="logo-emblem">
+      <img src="assets/logo-people-sun.jpg" alt="KIRALUM emblem of people raising a golden sun" loading="lazy">
+    </div>
+    <p class="footer-meta">© 2026 KIRALUM. All rights reserved.</p>
+  </footer>
+
+  <div class="product-modal" id="productModal" aria-hidden="true">
+    <div class="product-modal-backdrop"></div>
+    <div class="product-modal-dialog" role="dialog" aria-modal="true">
+      <button class="product-modal-close" aria-label="Close product detail">✕</button>
+      <div class="product-modal-body">
+        <div class="product-modal-visual">
+          <div class="slider" id="slider">
+            <button class="slider-nav slider-prev" aria-label="Previous image">←</button>
+            <div class="slider-window">
+              <div class="slider-track" id="sliderTrack"></div>
+            </div>
+            <button class="slider-nav slider-next" aria-label="Next image">→</button>
+            <button class="zoom-btn" id="zoomBtn" aria-label="Zoom image">🔍</button>
+          </div>
+        </div>
+        <div class="product-modal-info">
+          <p class="eyebrow" id="modalCategory"></p>
+          <h2 id="modalName"></h2>
+          <p class="price" id="modalPrice"></p>
+          <p id="modalDescription" class="modal-description"></p>
+          <div class="reviews">
+            <p>⭐⭐⭐⭐⭐ 4.8/5 (24 reviews)</p>
+          </div>
+          <div class="social-share">
+            <span class="share-label">Share:</span>
+            <button class="share-btn" data-platform="facebook" aria-label="Share on Facebook">📘</button>
+            <button class="share-btn" data-platform="twitter" aria-label="Share on Twitter">🐦</button>
+            <button class="share-btn" data-platform="pinterest" aria-label="Share on Pinterest">📌</button>
+            <button class="share-btn" data-platform="copy" aria-label="Copy link">🔗</button>
+          </div>
+          <div class="modal-actions">
+            <button class="compare-btn" id="compareBtn">Compare Product</button>
+          </div>
+          <div class="modal-options">
+            <select id="modalSize">
+              <option value="">Select Size</option>
+            </select>
+            <select id="modalColor">
+              <option value="">Select Color</option>
+            </select>
+          </div>
+          <button class="size-guide-btn">Size Guide</button>
+          <button class="btn btn-primary" id="modalAdd">Add to Bag</button>
+          <div class="related-products" id="relatedProducts">
+            <h3>You might also like</h3>
+            <div class="related-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Zoom Modal -->
+  <div class="zoom-modal" id="zoomModal" aria-hidden="true">
+    <div class="zoom-modal-backdrop"></div>
+    <div class="zoom-modal-dialog">
+      <button class="zoom-modal-close" aria-label="Close zoom">✕</button>
+      <img id="zoomImage" src="" alt="Product zoom" class="zoom-image">
+    </div>
+  </div>
+
+  <!-- Product Comparison Modal -->
+  <div class="compare-modal" id="compareModal" aria-hidden="true">
+    <div class="compare-modal-backdrop"></div>
+    <div class="compare-modal-dialog">
+      <div class="compare-header">
+        <h3>Compare Products</h3>
+        <button class="compare-modal-close" aria-label="Close comparison">✕</button>
+      </div>
+      <div class="compare-content" id="compareContent">
+        <p class="compare-empty">Add products to compare them side by side.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <span>Your Bag</span>
+      <button class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+      <button class="btn btn-primary" id="checkoutBtn">Checkout via WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-dialog">
+      <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+      <button class="search-close" aria-label="Close search">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true">
+    <div class="wishlist-header">
+      <span>Your Wishlist</span>
+      <button class="wishlist-close" aria-label="Close wishlist">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlistItems"></div>
+  </div>
+
+  <div class="size-guide-modal" id="sizeGuideModal" aria-hidden="true">
+    <div class="size-guide-dialog">
+      <h2>Size Guide</h2>
+      <button class="size-guide-close" aria-label="Close size guide">✕</button>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Hips (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>78-82</td><td>60-64</td><td>86-90</td></tr>
+          <tr><td>S</td><td>83-87</td><td>65-69</td><td>91-95</td></tr>
+          <tr><td>M</td><td>88-92</td><td>70-74</td><td>96-100</td></tr>
+          <tr><td>L</td><td>93-97</td><td>75-79</td><td>101-105</td></tr>
+          <tr><td>XL</td><td>98-102</td><td>80-84</td><td>106-110</td></tr>
+        </tbody>
+      </table>
+      <p class="size-note">Measurements are approximate. For best fit, measure yourself and compare to the chart.</p>
+    </div>
+  </div>
+
+  <a class="wa-fab" href="#" id="waFab" aria-label="Chat on WhatsApp">WA</a>
+
+  <!-- Comparison FAB -->
+  <button class="compare-fab" id="compareFab" aria-label="View product comparison">
+    <span class="compare-count" id="compareCount">0</span>
+    <span>⚖️</span>
+  </button>
+
+  <!-- Newsletter Popup -->
+  <div class="newsletter-popup" id="newsletterPopup" aria-hidden="true">
+    <div class="newsletter-popup-backdrop"></div>
+    <div class="newsletter-popup-dialog">
+      <button class="newsletter-popup-close" aria-label="Close newsletter">✕</button>
+      <div class="newsletter-popup-content">
+        <h3>Join Our Community</h3>
+        <p>Get exclusive access to new collections, styling tips, and special offers.</p>
+        <form id="popupNewsletterForm">
+          <input type="email" id="popupNewsletterEmail" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-popup-success" id="popupNewsletterSuccess">Thanks for subscribing!</p>
+        <label class="newsletter-no-thanks">
+          <input type="checkbox" id="noThanksCheckbox"> Don't show this again
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your browsing experience and analyze our traffic. By continuing to use this site, you consent to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-ghost" id="cookieAccept">Accept All</button>
+        <button class="btn btn-primary" id="cookieSettings">Cookie Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

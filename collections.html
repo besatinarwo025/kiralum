@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIRALUM | Collections</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Age Verification Modal -->
+  <div class="age-modal" id="ageModal" aria-hidden="false">
+    <div class="age-modal-content">
+      <div class="age-modal-body">
+        <h2>Age Verification</h2>
+        <p>You must be 18 or older to access this website.</p>
+        <div class="age-buttons">
+          <button class="btn btn-primary" id="ageConfirm">I am 18 or older</button>
+          <button class="btn btn-ghost" id="ageDecline">I am under 18</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header is-transparent">
+    <div class="nav-bar">
+      <a class="brand" href="index.html">KIRALUM</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html" aria-current="page">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle" aria-label="Open search">
+          <span>🔍</span>
+        </button>
+        <button class="wishlist-toggle" aria-label="Open wishlist">
+          <span>❤️</span>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+        <button class="cart-toggle" aria-label="Open cart">
+          <span class="cart-count" id="cartCount">0</span>
+          <span class="cart-label">Cart</span>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+      <nav class="drawer-links" aria-label="Mobile Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html" aria-current="page">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Collections</p>
+      <h1 class="h1">Our Collections</h1>
+      <p class="tagline">Editorial drops rooted in heritage and modern life.</p>
+    </section>
+
+    <section class="section">
+      <div class="collection-cards">
+        <article class="collection-card fade">
+          <div class="collection-image" style="background-image:url('assets/dress-front.jpg')"></div>
+          <div class="collection-body">
+            <p class="eyebrow">Everyday Forms</p>
+            <h2 class="h2">Soft structure</h2>
+            <p>Clean silhouettes designed for daily rhythm.</p>
+            <a class="text-link" href="shop.html?category=Dresses">Explore →</a>
+          </div>
+        </article>
+
+        <article class="collection-card fade">
+          <div class="collection-image" style="background-image:url('assets/trousers-front.jpg')"></div>
+          <div class="collection-body">
+            <p class="eyebrow">Cultural Lines</p>
+            <h2 class="h2">Tailored flow</h2>
+            <p>Elongated lines with grounded palettes.</p>
+            <a class="text-link" href="shop.html?category=Trousers">Explore →</a>
+          </div>
+        </article>
+
+        <article class="collection-card fade">
+          <div class="collection-image" style="background-image:url('assets/shirt-front.jpg')"></div>
+          <div class="collection-body">
+            <p class="eyebrow">Soft Structure</p>
+            <h2 class="h2">Crest details</h2>
+            <p>Identity-forward pieces with quiet confidence.</p>
+            <a class="text-link" href="shop.html?category=Shirts">Explore →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <p class="eyebrow">Why KIRALUM?</p>
+      <h2 class="h2">Design with soul</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>Artistic Expression</h4>
+          <p>Pieces informed by art, movement, and storytelling.</p>
+        </div>
+        <div class="value-card">
+          <h4>Quality Craftsmanship</h4>
+          <p>Considered fabrics, precise cuts, lasting construction.</p>
+        </div>
+        <div class="value-card">
+          <h4>Inclusive Design</h4>
+          <p>Fluid silhouettes meant for every body.</p>
+        </div>
+        <div class="value-card">
+          <h4>Social Impact</h4>
+          <p>Collections rooted in cultural dialogue and community.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>KIRALUM</h4>
+        <p>Fluid, contemporary, African-inspired fashion for everyone.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Instagram (12.5K)</a></li>
+          <li><a href="#">Facebook (8.2K)</a></li>
+          <li><a href="#">TikTok (15.3K)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Payments</h4>
+        <ul>
+          <li>Visa · Mastercard · PayPal · Apple Pay</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">© 2026 KIRALUM. All rights reserved. Privacy · Terms · Cookies</div>
+  </footer>
+
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-dialog">
+      <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+      <button class="search-close" aria-label="Close search">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true">
+    <div class="wishlist-header">
+      <span>Your Wishlist</span>
+      <button class="wishlist-close" aria-label="Close wishlist">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlistItems"></div>
+  </div>
+
+  <div class="size-guide-modal" id="sizeGuideModal" aria-hidden="true">
+    <div class="size-guide-dialog">
+      <h2>Size Guide</h2>
+      <button class="size-guide-close" aria-label="Close size guide">✕</button>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Hips (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>78-82</td><td>60-64</td><td>86-90</td></tr>
+          <tr><td>S</td><td>83-87</td><td>65-69</td><td>91-95</td></tr>
+          <tr><td>M</td><td>88-92</td><td>70-74</td><td>96-100</td></tr>
+          <tr><td>L</td><td>93-97</td><td>75-79</td><td>101-105</td></tr>
+          <tr><td>XL</td><td>98-102</td><td>80-84</td><td>106-110</td></tr>
+        </tbody>
+      </table>
+      <p class="size-note">Measurements are approximate. For best fit, measure yourself and compare to the chart.</p>
+    </div>
+  </div>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <span>Your Bag</span>
+      <button class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+      <button class="btn btn-primary" id="checkoutBtn">Checkout via WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-dialog">
+      <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+      <button class="search-close" aria-label="Close search">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true">
+    <div class="wishlist-header">
+      <span>Your Wishlist</span>
+      <button class="wishlist-close" aria-label="Close wishlist">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlistItems"></div>
+  </div>
+
+  <a class="wa-fab" href="#" id="waFab" aria-label="Chat on WhatsApp">WA</a>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your browsing experience and analyze our traffic. By continuing to use this site, you consent to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-ghost" id="cookieAccept">Accept All</button>
+        <button class="btn btn-primary" id="cookieSettings">Cookie Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

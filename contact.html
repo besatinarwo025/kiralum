@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIRALUM | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Age Verification Modal -->
+  <div class="age-modal" id="ageModal" aria-hidden="false">
+    <div class="age-modal-content">
+      <div class="age-modal-body">
+        <h2>Age Verification</h2>
+        <p>You must be 18 or older to access this website.</p>
+        <div class="age-buttons">
+          <button class="btn btn-primary" id="ageConfirm">I am 18 or older</button>
+          <button class="btn btn-ghost" id="ageDecline">I am under 18</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html">KIRALUM</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle" aria-label="Open search">
+          <span>🔍</span>
+        </button>
+        <button class="wishlist-toggle" aria-label="Open wishlist">
+          <span>❤️</span>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+        <button class="cart-toggle" aria-label="Open cart">
+          <span class="cart-count" id="cartCount">0</span>
+          Bag
+        </button>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+      <nav class="drawer-links" aria-label="Mobile Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="section contact-hero">
+      <div class="content">
+        <p class="eyebrow">Get in Touch</p>
+        <h1 class="h1">We'd Love to Hear From You</h1>
+        <p>Questions about our pieces, collaborations, or just want to say hello? Reach out.</p>
+      </div>
+    </section>
+
+    <section class="section contact-form">
+      <div class="form-container">
+        <h2>Send us a message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="">Select a topic</option>
+              <option value="order">Order Inquiry</option>
+              <option value="returns">Returns & Exchanges</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="press">Press/Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <p class="success" id="contactSuccess">Thank you for your message. We'll get back to you soon!</p>
+      </div>
+    </section>
+
+    <section class="section contact-info">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Customer Service</h3>
+          <p>Mon-Fri: 9AM-6PM EST</p>
+          <p>hello@kiralum.com</p>
+        </div>
+        <div class="info-card">
+          <h3>Press & Media</h3>
+          <p>press@kiralum.com</p>
+          <p>For collaboration inquiries</p>
+        </div>
+        <div class="info-card">
+          <h3>Store Location</h3>
+          <p>123 Fashion Street</p>
+          <p>New York, NY 10001</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>KIRALUM</h4>
+        <p>Fluid, contemporary, African-inspired fashion for everyone.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Instagram (12.5K)</a></li>
+          <li><a href="#">Facebook (8.2K)</a></li>
+          <li><a href="#">TikTok (15.3K)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Payments</h4>
+        <ul>
+          <li>Visa · Mastercard · PayPal · Apple Pay</li>
+        </ul>
+      </div>
+      <div class="instagram-feed">
+        <h4>Follow Us</h4>
+        <div class="feed-grid">
+          <img src="assets/hero.jpg" alt="Instagram post">
+          <img src="assets/hero.jpg" alt="Instagram post">
+          <img src="assets/hero.jpg" alt="Instagram post">
+        </div>
+      </div>
+    </div>
+    <div class="meta">© 2026 KIRALUM. All rights reserved. Privacy · Terms · Cookies</div>
+  </footer>
+
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-dialog">
+      <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+      <button class="search-close" aria-label="Close search">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true">
+    <div class="wishlist-header">
+      <span>Your Wishlist</span>
+      <button class="wishlist-close" aria-label="Close wishlist">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlistItems"></div>
+  </div>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <span>Your Bag</span>
+      <button class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+      <button class="btn btn-primary" id="checkoutBtn">Checkout via WhatsApp</button>
+    </div>
+  </div>
+
+  <a class="wa-fab" href="#" id="waFab" aria-label="Chat on WhatsApp">WA</a>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your browsing experience and analyze our traffic. By continuing to use this site, you consent to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-ghost" id="cookieAccept">Accept All</button>
+        <button class="btn btn-primary" id="cookieSettings">Cookie Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
